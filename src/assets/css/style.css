@@ -1,0 +1,180 @@
+
+/** Importar fuentes custom **/
+@font-face {
+    font-family: 'roboto';
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family:"Yanone";
+    src: url("../fonts/YanoneKaffeesatz-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family:"Finger";
+    src: url("../fonts/FingerPaint-Regular.ttf");
+}
+
+@font-face {
+    font-family:"TitilliumWeb";
+    src: url("../fonts/TitilliumWeb-Regular.ttf");
+}
+/** iconos MD **/
+
+@import "~material-design-icons-iconfont/dist/material-design-icons";
+
+/** Temas MD **/
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/*  MGRID*/
+@import '@material/layout-grid/mdc-layout-grid';
+
+
+/** Generales **/
+
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    /*background-image: url('../img/pattern.png') ;
+    background-attachment: fixed;
+    height: 100%;*/
+}
+/*.clearfix {
+    float:none;
+    clear: both;
+}*/
+/*  No scroll */
+::-webkit-scrollbar {
+    display: none;
+}
+/** Header **/
+
+/*header {
+    width: 100%;
+    height: 90px;
+    background-color:hsl(4,90%, 58%);
+    position: fixed;
+    display: block;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: block;
+    width: 50%;
+    height: inherit;
+    margin: 0 auto;
+    list-style: none;
+    margin-top: -8px;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 90px;
+    
+
+}
+header a {
+ display: block;
+ padding-right: 20px;
+ padding-left: 20px;
+ text-decoration: none;
+ color: white;
+ transition: all 300ms;
+}
+
+header a:hover,
+.actived {
+   /* background: rgba(244, 67, 54, 0.8);*/
+    /*background:hsl(4, 80%, 55%);
+  
+}
+/*  Logotipo  */
+/*#logo {
+    font-family: "Finger";
+    font-size: 30px;
+}
+#logo a {
+    transition: color 500ms, transform 500ms;
+}
+#logo a:hover{
+    background: transparent;
+    color: black;
+    transform:scale(1.50 , 1.50);
+
+}
+
+/* contenedor principal */
+
+#content {
+    width: 80%;
+    margin: 0 auto;
+    /*box-shadow: 0px 0px 5px black;
+    border-right: 1px solid #b7b7b7;
+    border-left: 1px solid #b7b7b7;
+    background: rgba(255,255,255, 0.7);*/
+    min-height: 900px;
+    margin-top: 150px;
+}
+
+
+/* footer */
+
+/*footer {
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Sobre mí */
+
+/*#title {
+    width: 70%;
+    margin: 0 auto;
+    margin-top:20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#title h1 {
+    font-family: "Finger";
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+
+}
+
+#title h2 {
+    font-size: 25px;
+    color:gray;
+    margin-top:5px;
+    margin-bottom: 5px;
+    font-family: 'Yanone';
+}
+
+article.about {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+    font-family: 'Yanone';
+  
+}
+.about h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-family: 'Yanone';
+  
+}
+
+.about p {
+    padding-top:20px;
+    padding-bottom: 30px;
+    text-align: justify;
+    color:gray;
+
+}
+*/

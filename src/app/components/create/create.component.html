@@ -1,0 +1,60 @@
+<h2 class="ml-3 py-4">{{ title }}</h2>
+<!-- Material form group -->
+<div *ngIf="status =='aprobado'">
+ El proyecto se creó correctamente, pueder verlo <a href="#">Aquí</a>
+</div>
+<div *ngIf="status =='fallo'">
+    El proyecto no se creó correctamente
+   </div>
+<div class="md-form form-group ml-3 container w-60">
+  <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)" [formGroup]="validatingForm" >
+      <div class="row w-100">
+        <div class="md-form col-12">
+            <input mdbInput mdbValidate type="text" class="form-control" id="name"  formControlName="test" />
+            <label for="name">Nombre</label>
+            <mdb-error *ngIf="test.invalid && (test.dirty || test.touched)">El Nombre es obligatorio</mdb-error>
+            <mdb-success *ngIf="test.valid && (test.dirty || test.touched)"></mdb-success>
+        </div>
+        <div class="md-form col-12">
+            <label for="description">Descripción</label>
+                <textarea  mdbInput mdbValidate type="text" class="md-textarea form-control"  id="descripcion" formControlName="text_descripcion">
+               </textarea>
+               <mdb-error *ngIf="text_descripcion.invalid && (text_descripcion.dirty || text_descripcion.touched)">La Descripción es obligatoria</mdb-error>
+            <mdb-success *ngIf="text_descripcion.valid && (text_descripcion.dirty || text_descripcion.touched)"></mdb-success>
+              
+        </div>
+        <div class="md-form col-12">
+            <input mdbInput mdbValidate type="text" class="form-control" id="category" formControlName="category_required"/>
+            <label for="category">Categoría</label>
+            <mdb-error *ngIf="category_required.invalid && (category_required.dirty || category_required.touched)">La Categoría es obligatoria</mdb-error>
+            <mdb-success *ngIf="category_required.valid && (category_required.dirty || category_required.touched)"></mdb-success>
+        </div>
+        <div class="md-form col-12">
+            <input mdbInput mdbValidate type="text" class="form-control" id="lanzamiento" formControlName="lanzamiento_required" />
+            <label for="year">Año de Lanzamiento</label>
+           <!--- <mdb-error *ngIf="lanzamiento_required.invalid && (lanzamiento_required.dirty || lanzamiento_required.touched)">El año es obligatorio</mdb-error>
+            <mdb-success *ngIf="lanzamiento_required.valid && (lanzamiento_required.dirty || lanzamiento_required.touched)"></mdb-success> -->
+        </div>
+        <div class="md-form col-12">
+            <label for="">Elegir archivo</label>
+         </div>      
+        <div class="md-form col-12">
+            <input  type="file"  name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
+        </div>    
+          
+        <!-- <div class="md-form col-12">
+            <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid" /> 
+        </div>  
+        <button type="submit" mdbBtn color="primary" (click)="onSubmit()">Submit form</button>
+    
+    -->  
+        <div class="md-form col-12">
+            <button class="testColor" mdbBtn type="submit"    mdbWavesEffect>Enviar</button>
+        </div> 
+
+        
+    </div>
+      
+  </form>
+</div>
+
