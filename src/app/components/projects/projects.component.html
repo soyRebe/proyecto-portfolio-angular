@@ -1,1 +1,84 @@
-<p>projects works!</p>
+<!-- <div class="container">
+<h2>Proyectos</h2>
+<ul>
+    <li *ngFor="let project of projects">
+      <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" alt="" srcset=""> 
+       <h3>{{project.name}}</h3> 
+        <p>{{project.category}}</p>
+    </li>
+</ul>
+</div> 
+<div class="col-md-12 mb-4">-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-xl-3 col-md-3">
+            <mdb-card class="mb-4">
+                <!--Card image-->
+                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"></mdb-card-img>
+                <!--Card content-->
+                <mdb-card-body>
+            
+                <!--Title-->
+                <mdb-card-title>
+                    <h4>Card Title</h4>
+                </mdb-card-title>
+            
+                <!--Text-->
+                <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+                    content.
+                </mdb-card-text>
+            
+                <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+                </mdb-card-body>
+            </mdb-card>
+        </div> 
+        <div class="col-lg-3 col-xl-3 col-md-3">
+            <mdb-card>
+                <!--Card image-->
+                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"></mdb-card-img>
+                <!--Card content-->
+                <mdb-card-body>
+            
+                <!--Title-->
+                <mdb-card-title>
+                    <h4>Card Title</h4>
+                </mdb-card-title>
+            
+                <!--Text-->
+                <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+                    content.
+                </mdb-card-text>
+            
+                <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+                </mdb-card-body>
+            </mdb-card>
+        </div>         
+    </div>
+</div>                
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-xl-3 col-md-3"  *ngFor="let project of projects">
+            <mdb-card class="mb-4">
+                <!--Card image-->
+                <mdb-card-img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" alt="Porfolio-Rebe" ></mdb-card-img>
+                <!--Card content-->
+                <mdb-card-body>
+            
+                <!--Title-->
+                <mdb-card-title>
+                    <h4>{{project.name}}</h4>
+                </mdb-card-title>
+            
+                <!--Text-->
+                <mdb-card-text> 
+                    {{project.category}}
+                </mdb-card-text>
+            
+                <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+                </mdb-card-body>
+            </mdb-card>
+        </div> 
+    
+    </div>
+</div>                
