@@ -1,7 +1,7 @@
 <h2 class="ml-3 py-4">{{ title }}</h2>
 <!-- Material form group -->
 <div *ngIf="status =='aprobado'">
- El proyecto se creó correctamente, pueder verlo <a href="#">Aquí</a>
+ El proyecto se creó correctamente, pueder verlo <a [routerLink]="['/proyecto', 'save_project._id']">Aquí</a>
 </div>
 <div *ngIf="status =='fallo'">
     El proyecto no se creó correctamente
