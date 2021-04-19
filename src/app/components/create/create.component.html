@@ -1,4 +1,6 @@
-<h2 class="ml-3 py-4">{{ title }}</h2>
+<div *ngIf="project">
+
+    <h2 class="ml-3 py-4">{{ title }}</h2>
 <!-- Material form group -->
 <div *ngIf="status =='aprobado'">
  El proyecto se creó correctamente, pueder verlo <a [routerLink]="['/proyecto', 'save_project._id']">Aquí</a>
@@ -35,7 +37,11 @@
            <!--- <mdb-error *ngIf="lanzamiento_required.invalid && (lanzamiento_required.dirty || lanzamiento_required.touched)">El año es obligatorio</mdb-error>
             <mdb-success *ngIf="lanzamiento_required.valid && (lanzamiento_required.dirty || lanzamiento_required.touched)"></mdb-success> -->
         </div>
-        <div class="md-form col-12">
+        <div class="md-form col-12" *ngIf="project.image">
+            <div class="col-lg-5 mb-lg-0 mb-5">
+                <img src="{{url+'get-image/'+project.image}}"  alt="project image"
+                  class="img-fluid rounded z-depth-1">
+              </div>
             <label for="">Elegir archivo</label>
          </div>      
         <div class="md-form col-12">
@@ -58,3 +64,6 @@
   </form>
 </div>
 
+
+
+</div>
