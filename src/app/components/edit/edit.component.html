@@ -1,61 +1,84 @@
-<div class="container" *ngIf="project">
+<div class="ml-3 py-4" *ngIf="project">
 	<h2>{{title}}</h2>
-
-	<div class="message success" *ngIf="status == 'success'">
+	<div class="message success " *ngIf="status == 'success'">
 		El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aquí</a>
 	</div>
-
 	<div class="message failed" *ngIf="status == 'failed'">
 		El proyecto NO SE HA PODIDO CREAR
 	</div>
-
-	<form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
-		<p>
-			<label for="name">Nombre</label>
-			<input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required />
-			<span class="form_error" *ngIf="name.touched && !name.valid">
-				El nombre es obligatorio
-			</span>
-		</p>
-
-		<p>
-			<label for="description">Descripción</label>
-			<textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
-			<span class="form_error" *ngIf="description.touched && !description.valid">
-				La descripción es obligatoria
-			</span>
-		</p>
-
-		<p>
-			<label for="category">Categoría</label>
-			<input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required />
-			<span class="form_error" *ngIf="category.touched && !category.valid">
-				La categoría es obligatoria
-			</span>
-		</p>
-
-		<p>
-			<label for="year">Año de lanzamiento</label>
-			<input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
-		</p>
-
-		<p>
-			<label for="langs">Lenguajes utilizados</label>
-			<input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required />
-			<span class="form_error" *ngIf="langs.touched && !langs.valid">
-				Los lenguajes son obligatorios
-			</span>
-		</p>
-
-		<p>
-			<label for="image">Imagen del proyecto</label>
-			<span class="image" *ngIf="project.image" style="float:none;">
-				<img src="{{url+'get-image/'+project.image}}" style="width:100px;"/>
-			</span><br/>
-			<input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
-		</p>
-
-		<input type="submit" value="Enviar" [disabled]="!projectForm.form.valid" />
-	</form>
+	<div class="md-form form-group ml-3 container w-60">
+		<form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+			<div class="row w-100">
+				<div class="md-form col-12">
+					<input mdbInput type="text" class="form-control" name="name" #name="ngModel" 
+					[(ngModel)]="project.name" required />
+					<label for="name">Nombre</label>
+					<span class="form_error" *ngIf="name.touched && !name.valid">
+					El nombre es obligatorio
+					</span>
+				</div>
+				<div class="md-form col-12">
+					<label for="description">Descripción</label>
+					<textarea mdbInput name="description"  class="md-textarea form-control" #description="ngModel"
+					 [(ngModel)]="project.description" required>
+					</textarea>
+					<span class="form_error" *ngIf="description.touched && !description.valid">
+						La descripción es obligatoria
+					</span>
+				</div>
+				<div class="md-form col-12">
+					<label for="category">Categoría</label>
+					<input mdbInput type="text" class="form-control" name="category" #category="ngModel"
+					 [(ngModel)]="project.category" required />
+					<span class="form_error" *ngIf="category.touched && !category.valid">
+						La categoría es obligatoria
+					</span>
+				</div>
+				<div class="md-form col-12">
+					<label for="year">Año de lanzamiento</label>
+					<input mdbInput type="number" class="form-control" name="year" #year="ngModel"
+					 [(ngModel)]="project.year" />
+				</div>
+				<div class="md-form col-12">
+					<label for="langs">Lenguajes utilizados</label>
+					<input mdbInput type="text" class="form-control"  name="langs" #langs="ngModel" 
+					[(ngModel)]="project.langs" required />
+					<span class="form_error" *ngIf="langs.touched && !langs.valid">
+						Los lenguajes son obligatorios
+					</span>
+				</div>
+				<div class="md-form col-12 py-2">
+					<label for="">Modificar imagen</label>	
+				</div>
+				<div class="md-form col-12">
+					<div  class="col-lg-5 mb-lg-0 mb-5" *ngIf="project.image">
+						<img src="{{url+'get-image/'+project.image}}" class="img-fluid rounded z-depth-1" />
+					</div>	
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="custom-file">
+							<div class="col-6 file-path-wrapper">
+								<label class="testlabel"for="tets">
+									<mdb-icon fas icon="paperclip"></mdb-icon>
+									seleccionar archivo</label>	
+							</div>
+							<div>
+								<input  class="custom-file-input col-6 testinput" id=test
+							type="file"  name="image" placeholder="subir imagen"
+							(change)="fileChangeEvent($event)"/>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div class="md-form col-12">
+					<button  class="testColor" mdbBtn type="submit" mdbWavesEffect    
+						[disabled]="!projectForm.form.valid" >Enviar
+					</button>
+				</div>		
+		    </div>		
+		</form>
+    </div>
 </div>
+
 

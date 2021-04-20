@@ -30,13 +30,37 @@
             {{project.category}}</p>
         </div>
       </div>
+      <div class="row mb-3">
+        <div class="col-md-1 col-2">
+          <mdb-icon fas icon="code" size="2x" class="red-text"></mdb-icon>
+        </div>
+        <div class="col-md-11 col-10">
+          <h5 class="font-weight-bold mb-3">Lenguajes utilizados</h5>
+          <p class="grey-text">
+            {{project.langs}}</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="mt-4">
-    <button  (click)="deleteProject(project._id)" mdbBtn type="button" color="primary" mdbWavesEffect>
+  <div class="mt-4" *ngIf="confirm ==false">
+    <button (click)=" setConfirm(true)" mdbBtn type="button" color="primary" mdbWavesEffect>
         <mdb-icon fas icon="magic" class="mr-1"></mdb-icon>Borrar
-      </button>
-      <button [routerLink]="['/editar-proyecto', project._id]" mdbBtn type="button" color="default" mdbWavesEffect><mdb-icon fas icon="pen" class="ml-1"></mdb-icon>Editar</button>   
+    </button>
+    <button [routerLink]="['/editar-proyecto', project._id]" mdbBtn type="button" 
+      color="default" mdbWavesEffect><mdb-icon fas icon="pen" class="ml-1"></mdb-icon>Editar
+    </button>   
   </div>
+  <div class="mt-4" *ngIf="confirm ==true">
+    <span class="text-danger text-center w-responsive mx-auto mb-5">
+      ¿Estas seguro de borrar este proyecto?
+    </span><br>
+    <button (click)="deleteProject(project._id)" mdbBtn type="button" color="danger" mdbWavesEffect>
+        <mdb-icon fas icon="magic" class="mr-1"></mdb-icon>Eliminar definitivamente
+    </button>
+    <button (click)=" setConfirm(false)" mdbBtn type="button" 
+      color="default" mdbWavesEffect><mdb-icon fas icon="pen" class="ml-1"></mdb-icon>Cancelar
+    </button>   
+  </div>
+
   <hr class="my-5">
 </section>
